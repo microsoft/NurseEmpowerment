@@ -1,6 +1,6 @@
 # Day in the life of a nurse
 
-This repository contains three [Power Apps](https://make.powerapps.com/) which were created based on a study called 'The Day in the Life of a Nurse', one of the outcomes were several minimal viable products that could support nurses in their daily job. These MVP Power Apps solutions are enhanced with [Nuance Speech to Text](https://www.nuancehealthcaredeveloper.com/?q=Dragon-Medical-SpeechKit-Home), and utilize [Text Analytics for Health](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/text-analytics-for-health/overview ) for medical structuring. The data is being served from [FHIR API](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview) and utilize the [FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/) and [FHIRClinical](https://docs.microsoft.com/en-us/connectors/fhirclinical/) Power Platform connectors.
+This repository contains three open-source example [Power Apps](https://make.powerapps.com/) which were created based on a study called 'The Day in the Life of a Nurse'. One of the outcomes were several minimal viable products that could support nurses in their daily job. These starter Power Apps solutions are enhanced with [Nuance Speech to Text](https://www.nuancehealthcaredeveloper.com/?q=Dragon-Medical-SpeechKit-Home), and utilize [Text Analytics for Health](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/text-analytics-for-health/overview ) for medical structuring. The data is being served from [FHIR API](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview) and utilize the [FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/) and [FHIRClinical](https://docs.microsoft.com/en-us/connectors/fhirclinical/) Power Platform connectors.
 
 # Scenario
 
@@ -13,18 +13,18 @@ The scenarios were created based on nurse interviews from several hospitals and 
 # Inlcuded applications
 
 ## App One: Your patient information at hand
-<center><img src="images//NurseAppOne.png" ></center>
+<center><img src="images//PatientInformation.png" ></center>
 
-You can find the link to the package [here](packages/App%20One/)
+You can find the link to the package [here](packages/Nurse-PatientInformation.zip)
 
 ## App Two: Easy Reporting at the bedside
-<center><img src="images//NurseAppTwo.png" ></center>
+<center><img src="images//Reporting.png" ></center>
 
-You can find the link to the package [here](packages/App%20Two/)
+You can find the link to the package [here](packages/Nurse-Reporting.zip)
 ## App Three: Efficient team communication
-<center><img src="images//NurseAppThree.png" ></center>
+<center><img src="images//Communication.png" ></center>
 
-You can find the link to the package [here](packages/App%20Three/)
+You can find the link to the package [here](packages/NurseCommunication.zip)
 ## Dependencies 
 
 ### FHIR API
