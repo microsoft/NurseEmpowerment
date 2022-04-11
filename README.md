@@ -10,7 +10,7 @@ The scenarios were created based on nurse interviews from several hospitals and 
 <center><img src="images//DigitalSolutions-2.png" ></center>
 <br>
 
-# Inlcuded Power Apps
+# Included Power Apps
 
 ## Power App One: Your patient information at hand
 <center><img src="images//PatientInformation.png" ></center>
