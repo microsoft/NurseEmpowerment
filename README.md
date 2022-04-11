@@ -12,13 +12,13 @@ The scenarios were created based on nurse interviews from several hospitals and 
 
 # Inlcuded Power Apps
 
-## Power APp One: Your patient information at hand
+## Power App One: Your patient information at hand
 <center><img src="images//PatientInformation.png" ></center>
 
 An overview of your patients:
--   See in which room they are and the urgency of care tasks.-
+-   See in which room they are and the urgency of care tasks
 -   The info you need per patient such as lab results, medication list, events  or care plan activities
--   Getting notifications such as: Patient A: Test results are in -- Patient B: IV must be replaced 
+-   Getting notifications such as: Patient A: Test results are in, Patient B: IV must be replaced 
 
 You can find the link to the package [here](packages/Nurse-PatientInformation.zip)
 
@@ -28,7 +28,7 @@ You can find the link to the package [here](packages/Nurse-PatientInformation.zi
 -   Check off task list 
 -   Report via Nuance speech to text, integrated with Text Analytics for Health to automatically find healthcare entities.
 -   Request or Report patient vital signs via FHIR.
--   Have a Clear overview of your patients, colleagues and topics
+-   Have a clear overview of your patients, colleagues and topics
 
 You can find the link to the package [here](packages/Nurse-Reporting.zip)
 ## Power App Three: Efficient team communication
@@ -36,7 +36,7 @@ You can find the link to the package [here](packages/Nurse-Reporting.zip)
 
 -   Send short messages 
 -   Search colleagues by their function 
--   Virtual attending a meeting via Microsfot Teams
+-   Virtual attend a meeting via Microsoft Teams
 
 You can find the link to the package [here](packages/NurseCommunication.zip)
 ## Dependencies 
@@ -69,7 +69,8 @@ This project welcomes contributions and suggestions. Most contributions require 
 When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
 
 This project has adopted the Microsoft Open Source Code of Conduct. For more information see the Code of Conduct FAQ or contact opencode@microsoft.com with any additional questions or comments.
-<br><br>
+
+<br>
 
 # Trademarks
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow Microsoft's Trademark & Brand Guidelines. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.
