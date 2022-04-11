@@ -10,19 +10,33 @@ The scenarios were created based on nurse interviews from several hospitals and 
 <center><img src="images//DigitalSolutions-2.png" ></center>
 <br>
 
-# Inlcuded applications
+# Inlcuded Power Apps
 
-## App One: Your patient information at hand
+## Power APp One: Your patient information at hand
 <center><img src="images//PatientInformation.png" ></center>
+
+An overview of your patients:
+-   See in which room they are and the urgency of care tasks.-
+-   The info you need per patient such as lab results, medication list, events  or care plan activities
+-   Getting notifications such as: Patient A: Test results are in -- Patient B: IV must be replaced 
 
 You can find the link to the package [here](packages/Nurse-PatientInformation.zip)
 
-## App Two: Easy Reporting at the bedside
+## Power App Two: Easy Reporting at the bedside
 <center><img src="images//Reporting.png" ></center>
 
+-   Check off task list 
+-   Report via Nuance speech to text, integrated with Text Analytics for Health to automatically find healthcare entities.
+-   Request or Report patient vital signs via FHIR.
+-   Have a Clear overview of your patients, colleagues and topics
+
 You can find the link to the package [here](packages/Nurse-Reporting.zip)
-## App Three: Efficient team communication
+## Power App Three: Efficient team communication
 <center><img src="images//Communication.png" ></center>
+
+-   Send short messages 
+-   Search colleagues by their function 
+-   Virtual attending a meeting via Microsfot Teams
 
 You can find the link to the package [here](packages/NurseCommunication.zip)
 ## Dependencies 
@@ -35,10 +49,13 @@ https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview
 
 <center><img src="images//FHIRServices.png" ></center>
 
+<br>
 
 ### Nuance Dragon Medical SpeechKit
 
 To enable clinical speech to text, we embeded the Dragon Medical SpeechKit into the PowerApp, you can find more info on DMSK here: https://www.nuancehealthcaredeveloper.com/?q=Dragon-Medical-SpeechKit-Home, you can request a trial to see how the integration works
+
+<br>
 
 ### Text Analytics For Health
 
