@@ -20,7 +20,7 @@ An overview of your patients:
 -   The info you need per patient such as lab results, medication list, events  or care plan activities
 -   Getting notifications such as: Patient A: Test results are in, Patient B: IV must be replaced 
 
-You can find the link to the package [here](packages/Nurse-PatientInformation.zip)
+You can find the link to the package [here](Solutions/NursePatientInformation_1_0_0_0.zip)
 
 ## Power App Two: Easy Reporting at the bedside
 <center><img src="images//Reporting.png" ></center>
@@ -30,7 +30,7 @@ You can find the link to the package [here](packages/Nurse-PatientInformation.zi
 -   Request or Report patient vital signs via FHIR.
 -   Have a clear overview of your patients, colleagues and topics
 
-You can find the link to the package [here](packages/Nurse-Reporting.zip)
+You can find the link to the package [here](Solutions/NurseReporting_1_0_0_0.zip)
 ## Power App Three: Efficient team communication
 <center><img src="images//Communication.png" ></center>
 
@@ -38,7 +38,7 @@ You can find the link to the package [here](packages/Nurse-Reporting.zip)
 -   Search colleagues by their function 
 -   Virtual attend a meeting via Microsoft Teams
 
-You can find the link to the package [here](packages/NurseCommunication.zip)
+You can find the link to the package [here](Solutions/NurseCommunication_1_0_0_0.zip)
 ## Dependencies 
 
 ### FHIR API
