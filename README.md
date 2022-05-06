@@ -2,6 +2,7 @@
 
 This repository contains three open-source example [Power Apps](https://make.powerapps.com/) which were created based on a study called 'The Day in the Life of a Nurse'. One of the outcomes were several minimal viable products that could support nurses in their daily job. These starter Power Apps solutions are enhanced with [Nuance Speech to Text](https://www.nuancehealthcaredeveloper.com/?q=Dragon-Medical-SpeechKit-Home), and utilize [Text Analytics for Health](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/text-analytics-for-health/overview ) for medical structuring. The data is being served from [FHIR API](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview) and utilize the [FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/) and [FHIRClinical](https://docs.microsoft.com/en-us/connectors/fhirclinical/) Power Platform connectors.
 
+You can find the setup information [here](setup.md)
 # Scenario
 
 The scenarios were created based on nurse interviews from several hospitals and countries in Western Europe, you can find the full white paper [here](whitepaper/Smart%20digital%20solutions%20to%20support%20nurses.pdf) 
@@ -17,7 +18,7 @@ The scenarios were created based on nurse interviews from several hospitals and 
 
 An overview of your patients:
 -   See in which room they are and the urgency of care tasks
--   The info you need per patient such as lab results, medication list, events  or care plan activities
+-   The info you need per patient such as lab results, medication list, events or care plan activities
 -   Getting notifications such as: Patient A: Test results are in, Patient B: IV must be replaced 
 
 You can find the link to the package [here](Solutions/NursePatientInformation_1_0_0_0.zip)
@@ -53,7 +54,7 @@ https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview
 
 ### Nuance Dragon Medical SpeechKit
 
-To enable clinical speech to text, we embeded the Dragon Medical SpeechKit into the PowerApp, you can find more info on DMSK here: https://www.nuancehealthcaredeveloper.com/?q=Dragon-Medical-SpeechKit-Home, you can request a trial to see how the integration works
+To enable clinical speech to text, we embedded the Dragon Medical SpeechKit into the PowerApp, you can find more info on DMSK here: https://www.nuancehealthcaredeveloper.com/?q=Dragon-Medical-SpeechKit-Home, you can request a trial to see how the integration works
 
 <br>
 
