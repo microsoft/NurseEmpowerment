@@ -31,7 +31,7 @@ You can find the link to the package [here](Solutions/NursePatientInformation_1_
 -   Request or Report patient vital signs via FHIR.
 -   Have a clear overview of your patients, colleagues and topics
 
-You can find the link to the package [here](Solutions/NurseReporting_1_0_0_0.zip)
+You can find the link to the package [here](Solutions/NurseReporting_1_0_0_1.zip)
 ## Power App Three: Efficient team communication
 <center><img src="images//Communication.png" ></center>
 
