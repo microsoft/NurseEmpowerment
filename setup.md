@@ -21,7 +21,7 @@ If you want to load dummy data into the FHIR server, you can use [Synthea](https
 
 ## Text Analytics  for Health Power Automate Flow ##
 
-The **nurse reporting** app contains a Power Automate Flow that sends the transcribed conversation to a Text Analytics for Health endpoint and returns the result back to the Power App. The Power Automate flow is included in the solution. You can save it in your instance or create a new one and use the example as a base.
+The **nurse reporting** app contains a Power Automate Flow that sends the transcribed conversation to an Azure Function, which communicates with the Text Analytics for Health endpoint. The code base can be found [here](./TextAnalyticsForHealthFunction/). You can easily deploy the azure function via this [tutorial](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code). The only code change you need to make is in the TextAnalyticsWorker.cs file, by changing the <b>subscriptionKey</b> or <b>endpoint</b>.
 
 ## Nuance PCF Component
 
