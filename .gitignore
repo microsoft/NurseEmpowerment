@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TextAnalyticsForHealthFunction/.vs
+/TextAnalyticsForHealthFunction/bin
+/TextAnalyticsForHealthFunction/obj
+/TextAnalyticsForHealthFunction/Properties

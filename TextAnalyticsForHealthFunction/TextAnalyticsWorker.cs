@@ -12,23 +12,29 @@ using Azure;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection.Metadata;
+using System.Net.Http;
+using System.Transactions;
 
 namespace TextAnalyticsForHealthFunction
 {
     public static class Function1
     {
-        private static readonly string subscriptionKey = "";
-        private static readonly string endpoint = "https://westeurope.cognitiveservices.azure.com";
-
+        private static readonly string GeneralSubscriptionKey = Environment.GetEnvironmentVariable("GENERAL-COGNITIVESERVICE-KEY");
+        private static readonly string TranslatorSubscriptionKey = Environment.GetEnvironmentVariable("GENERAL-COGNITIVESERVICE-KEY");
+        private static readonly string GeneralCognitivServiceEndPoint = "https://westeurope.cognitiveservices.azure.com";
+        private static readonly string TranslatorEndpoint = " https://api.cognitive.microsofttranslator.com";
+       
         [FunctionName("TextAnalyticsWorker")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-
             string query = await new StreamReader(req.Body).ReadToEndAsync();
-            var client = new TextAnalyticsClient(new Uri(endpoint), new AzureKeyCredential(subscriptionKey));
-            List<string> batchInput = new List<string>() { query };
+            string translateRoute = "/translate?api-version=3.0&to=en";
+            var translated = await TranslateTextRequest(TranslatorSubscriptionKey, TranslatorEndpoint, translateRoute, query);
+            List<string> batchInput = new List<string>() { translated };
+            var client = new TextAnalyticsClient(new Uri(GeneralCognitivServiceEndPoint), new AzureKeyCredential(GeneralSubscriptionKey));
             AnalyzeHealthcareEntitiesOperation healthOperation = await client.StartAnalyzeHealthcareEntitiesAsync(batchInput);
             await healthOperation.WaitForCompletionAsync();
             var returnValue = new ProcessedContent();
@@ -48,12 +54,13 @@ namespace TextAnalyticsForHealthFunction
 
                         foreach (var entity in entitiesInDoc.Entities)
                         {
+                            var snowmed = entity.DataSources.FirstOrDefault(p => p.Name == "SNOMEDCT_US");
                             var temp = new EntityInfo
                             {
                                 Text = entity.Text,
                                 Category = entity.Category.ToString(),
                                 ConfidenceScore = entity.ConfidenceScore,
-                                Snowmed = entity.DataSources.FirstOrDefault(p => p.Name == "SNOMEDCT_US"),
+                                Snowmed = snowmed != null ? snowmed.EntityId :  "",
                                 Length = entity.Length,
                                 NormalizedText = entity.NormalizedText,
                                 Offset = entity.Offset,
@@ -80,11 +87,50 @@ namespace TextAnalyticsForHealthFunction
                     }
                 }
             }
+     
             return new OkObjectResult(returnValue);
+        }
+
+        static public async Task<string> TranslateTextRequest(string resourceKey, string endpoint, string route, string inputText)
+        {
+            object[] body = new object[] { new { Text = inputText } };
+            var requestBody = JsonConvert.SerializeObject(body);
+
+            using (var client = new HttpClient())
+            using (var request = new HttpRequestMessage())
+            {
+                // Build the request.
+                request.Method = HttpMethod.Post;
+                request.RequestUri = new Uri(endpoint + route);
+                request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+                request.Headers.Add("Ocp-Apim-Subscription-Key", resourceKey);
+                request.Headers.Add("Ocp-Apim-Subscription-Region", "westeurope");
+
+                // Send the request and get response.
+                HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
+                // Read response as a string.
+                string result = await response.Content.ReadAsStringAsync();
+                TranslationResult[] deserializedOutput = JsonConvert.DeserializeObject<TranslationResult[]>(result);
+                // Iterate over the deserialized results.
+                if (deserializedOutput.Any())
+                {
+                    var o = deserializedOutput.FirstOrDefault();
+                    if (o.DetectedLanguage.Language == "en")
+                    {
+                        return inputText;
+                    }
+                    if (o.Translations.Any())
+                    {
+                        return o.Translations.FirstOrDefault().Text;
+                    }
+                }
+                return "";
+            }
         }
     }
 
     
+
     public class ProcessedContent
     {
         public ProcessedContent()
@@ -104,11 +150,51 @@ namespace TextAnalyticsForHealthFunction
         public double ConfidenceScore { get; set; }
         public int Offset { get; set; }
         public int Length { get; set; }
-        public EntityDataSource Snowmed { get; set; }
+        public string Snowmed { get; set; }
         public string Association { get; set; }
         public string Conditionality { get; set; }
         public string Certainty { get; set; }
         public List<string> RelationInfo { get; set; }
         public string NormalizedText { get; set; }
     }
+
+    public class TranslationResult
+    {
+        public DetectedLanguage DetectedLanguage { get; set; }
+        public TextResult SourceText { get; set; }
+        public Translation[] Translations { get; set; }
+    }
+
+    public class DetectedLanguage
+    {
+        public string Language { get; set; }
+        public float Score { get; set; }
+    }
+
+    public class TextResult
+    {
+        public string Text { get; set; }
+        public string Script { get; set; }
+    }
+
+    public class Translation
+    {
+        public string Text { get; set; }
+        public TextResult Transliteration { get; set; }
+        public string To { get; set; }
+        public Alignment Alignment { get; set; }
+        public SentenceLength SentLen { get; set; }
+    }
+
+    public class Alignment
+    {
+        public string Proj { get; set; }
+    }
+
+    public class SentenceLength
+    {
+        public int[] SrcSentLen { get; set; }
+        public int[] TransSentLen { get; set; }
+    }
+
 }
