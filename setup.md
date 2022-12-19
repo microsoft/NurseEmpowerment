@@ -35,6 +35,22 @@ The source code of the PCF component is also on [Github](https://github.com/iBoo
 
 <br>
 
-# Nurse Communication
+## Connect your Power App to Shifts
 
-Currently the clinicians and roles are defined in the *onstart* method on the App. This can be linked to your employee backend combined with the specialities they have.  
+The Nurse reporting Power App alllows you to connect with the Microsoft Shifts applicaiton in Microsoft Teams. 
+Here you can also put your doctor and manager on call, or know who is workinging today.
+
+To connect your Microsoft Shifts to your Power App, you will need to perform the following steps: 
+
+1. Go to Microsoft Shifts and create the following Groups: 
+- Nurses
+- DoctorOnCall
+- ManagerOnCall
+- Service Team
+
+<img src="images//setup/Shifts.png" >
+
+2. Go to the PowerApp, click on App in the Tree View and on the <strong>onStart</strong>, update this line  ```Set(teamsId, "YOUR TEAMS ID") ``` by Replacing YOUR Teams ID with the GUID of your Teams ID.
+Based on the groups, and people in the shifts, you should see your colleagues who are online/offline, manager on call or doctor on call.
+
+<img src="images//setup/ColleaguesToday.png" >

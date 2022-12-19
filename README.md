@@ -1,6 +1,6 @@
 # Day in the life of a nurse
 
-This repository contains three open-source example [Power Apps](https://make.powerapps.com/) which were created based on a study called 'The Day in the Life of a Nurse'. One of the outcomes were several minimal viable products that could support nurses in their daily job. These starter Power Apps solutions are enhanced with [Nuance Speech to Text](https://www.nuancehealthcaredeveloper.com/?q=Dragon-Medical-SpeechKit-Home), and utilize [Text Analytics for Health](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/text-analytics-for-health/overview ) for medical structuring. The data is being served from [FHIR API](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview) and utilize the [FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/) and [FHIRClinical](https://docs.microsoft.com/en-us/connectors/fhirclinical/) Power Platform connectors.
+This repository contains several open-source example [Power Apps](https://make.powerapps.com/) which were created based on a study called 'The Day in the Life of a Nurse'. One of the outcomes were several minimal viable products that could support nurses in their daily job. These starter Power Apps solutions are enhanced with [Nuance Speech to Text](https://www.nuancehealthcaredeveloper.com/?q=Dragon-Medical-SpeechKit-Home), and utilize [Text Analytics for Health](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/text-analytics-for-health/overview ) for medical structuring. The data is being served from [FHIR API](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview) and utilize the [FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/) and [FHIRClinical](https://docs.microsoft.com/en-us/connectors/fhirclinical/) Power Platform connectors. The application can also be linked to [Microsoft Shifts](https://support.microsoft.com/en-us/office/get-started-in-shifts-5f3e30d8-1821-4904-be26-c3cd25a497d6) where you can get real-time shift info from your colleagues.
 
 You can find the setup information [here](setup.md)
 # Scenario
@@ -13,7 +13,17 @@ The scenarios were created based on nurse interviews from several hospitals and 
 
 # Included Power Apps
 
-## Power App One: Your patient information at hand
+
+## Power App One: Team Communication and Easy Reporting at the bedside
+<center><img src="images//Reporting.png" ></center>
+
+-   Report via Nuance speech to text, integrated with Text Analytics for Health to automatically find healthcare entities.
+-   Request or Report patient vital signs via FHIR.
+-   Connect to Shifts in Microsoft Teams and get an overview of your colleagues, Manager on Call, Doctor on Call, ...
+
+You can find the link to the package [here](Solutions/NurseReporting_1_0_0_2.zip)
+
+## Power App Two: Your patient information at hand
 <center><img src="images//PatientInformation.png" ></center>
 
 An overview of your patients:
@@ -23,23 +33,7 @@ An overview of your patients:
 
 You can find the link to the package [here](Solutions/NursePatientInformation_1_0_0_0.zip)
 
-## Power App Two: Easy Reporting at the bedside
-<center><img src="images//Reporting.png" ></center>
 
--   Check off task list 
--   Report via Nuance speech to text, integrated with Text Analytics for Health to automatically find healthcare entities.
--   Request or Report patient vital signs via FHIR.
--   Have a clear overview of your patients, colleagues and topics
-
-You can find the link to the package [here](Solutions/NurseReporting_1_0_0_1.zip)
-## Power App Three: Efficient team communication
-<center><img src="images//Communication.png" ></center>
-
--   Send short messages 
--   Search colleagues by their function 
--   Virtual attend a meeting via Microsoft Teams
-
-You can find the link to the package [here](Solutions/NurseCommunication_1_0_0_0.zip)
 ## Dependencies 
 
 ### FHIR API
@@ -61,6 +55,12 @@ To enable clinical speech to text, we embedded the Dragon Medical SpeechKit into
 ### Text Analytics For Health
 
 To provide to automatic healthcare entity recognition, we utilized Text Analytics For Health: https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/text-analytics-for-health/overview 
+
+<br>
+
+### Microsoft Shifts
+
+To get information on the Shifts of your department, you can utilize the Teams/Shifts connector in the Power App : https://support.microsoft.com/en-us/office/get-started-in-shifts-5f3e30d8-1821-4904-be26-c3cd25a497d6 
 
 <br>
 
