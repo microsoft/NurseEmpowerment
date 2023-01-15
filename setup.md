@@ -2,7 +2,7 @@
 
 ## Import solution
 
-The three different solutions can be found [here](Solutions/), download the zip files and navigate to https://make.powerapps.com/. <br>
+The different solutions can be found [here](Solutions/), download the zip files and navigate to https://make.powerapps.com/. <br>
 You can then import a new solution by clicking on **solutions** , **import** and upload the **Solution Zip File**
 
 <center><img src="images//setup/import.png" ></center>

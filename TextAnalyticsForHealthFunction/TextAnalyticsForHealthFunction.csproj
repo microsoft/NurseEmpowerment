@@ -5,8 +5,8 @@
 	  <_FunctionsSkipCleanOutput>true</_FunctionsSkipCleanOutput>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Azure.AI.TextAnalytics" Version="5.1.1" />
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.1" />
+    <PackageReference Include="Azure.AI.TextAnalytics" Version="5.2.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.3" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

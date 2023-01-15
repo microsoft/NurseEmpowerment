@@ -21,7 +21,7 @@ The scenarios were created based on nurse interviews from several hospitals and 
 -   Request or Report patient vital signs via FHIR.
 -   Connect to Shifts in Microsoft Teams and get an overview of your colleagues, Manager on Call, Doctor on Call, ...
 
-You can find the link to the package [here](Solutions/NurseReporting_1_0_0_2.zip)
+You can find the link to the package [here](Solutions/NurseReporting_1_0_0_3.zip)
 
 ## Power App Two: Your patient information at hand
 <center><img src="images//PatientInformation.png" ></center>
